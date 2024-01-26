@@ -1,0 +1,2 @@
+#!/bin/bash
+effective_uid=$(id -u);echo ${$(getent passwd <<< $effective_uid | cut -d: -f1)}
