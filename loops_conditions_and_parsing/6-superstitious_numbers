@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+# This script displays numbers from 1 to 20 and prints superstitions for specific iterations
+
+# Counter variable
+count=1
+
+# Loop using while to iterate from 1 to 20
+while [ $count -le 20 ]; do
+    # Case statement to check for specific iterations
+    case $count in
+        4)
+            echo $count
+            echo "bad luck from China"
+            ;;
+        9)
+            echo $count
+            echo "bad luck from Japan"
+            ;;
+        17)
+            echo $count
+            echo "bad luck from Italy"
+            ;;
+        *)
+            echo $count
+            ;;
+    esac
+    # Increment the counter
+    ((count++))
+done
