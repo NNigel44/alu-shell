@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
-# This script lists currently running processes.
+# This script displays list of currently running processes
+# This script displays list of currently running processes
+# Display a user-oriented format
+# Show process hierarchy
 
-# Display the header line
-echo "USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND"
-
-# Use ps command to list all processes with user-oriented format and process hierarchy
-ps -e -o user,pid,%cpu,%mem,vsz,rss,tty,stat,start,time,command --forest
+ps -a -x -u -f
