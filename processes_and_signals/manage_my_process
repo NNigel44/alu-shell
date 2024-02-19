@@ -1,24 +1,9 @@
 #!/usr/bin/env bash
-#manage my process
+# Indefinitely writes "I am alive" to the file /tmp/my_process.
+#   Pauses two seconds in between each message.
 
-file=/var/run/my_process.pid
-if [ "$1" == "start" ];
-then
-    ./manage_my_process &
-    sudo bash -c "echo $! > $file"
-    echo "manage_my_process started"
-elif [ "$1" == "stop" ];
-then
-    pkill -f ./manage_my_process
-    sudo rm $file
-    echo "manage_my_process stopped"
-elif [ "$1" == "restart" ];
-then
-    pkill -f ./manage_my_process
-    sudo rm $file
-    ./manage_my_process &
-    sudo bash -c "echo $! > $file"
-    echo "manage_my_process restarted"
-else
-    echo "Usage: manage_my_process {start|stop|restart}"
-fi
+while true
+do
+  echo "I am alive!" >> /tmp/my_process
+  sleep 2
+done
