@@ -1,4 +1,4 @@
 #!/bin/bash
 
 # Run Python script specified in the environment variable $PYFILE
-python3 "$PYFILE"
+python3 "$PYFILE" 
